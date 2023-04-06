@@ -11,6 +11,34 @@ práticas_](https://cursos.alura.com.br/course/django-templates-boas-praticas)
 \[_Django: templates and good practices_\] from
 [Alura](https://www.alura.com.br/).
 
+## Running the application
+
+To run the application:
+
+1. Clone the repository from GitHub
+
+    ```sh
+    git clone https://github.com/af0liveira/alura-space.git
+    ```
+
+2. Enter the cloned repository and create the virtual environment (the exemplo
+   shows the use of _conda_, but you can use _virtualenv_ as well, as explained
+   below)
+
+    ```sh
+    cd alura-space
+    conda create --prefix ./venv --file environment.yml
+    conda activate ./venv
+    ```
+
+3. Start the server
+
+    ```sh
+    python manage.py runserver
+    ```
+
+The development server should not be available at `http://127.0.0.1:8000/`.
+
 ## Virtual development environment
 
 The files `environment.yml` and `requirements.txt` are provided for creating the
