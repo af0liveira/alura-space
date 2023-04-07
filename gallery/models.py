@@ -16,6 +16,7 @@ class Photo(models.Model):
     category = models.CharField(max_length=100, choices=CATEGORIES, default='')
     description = models.TextField(null=False, blank=False)
     filename = models.CharField(max_length=150, null=False, blank=False)
+    public = models.BooleanField(default=False)
 
     def __str__(self):
         return f'Photo [title={self.title}]'
