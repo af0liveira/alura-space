@@ -8,6 +8,8 @@ class ListPhotos(admin.ModelAdmin):
     list_display = ('id', 'title', 'category', 'caption')
     list_display_links = ('id', 'title')
     search_fields = ('title',)
+    list_filter = ('category',)
+    list_per_page = 10
 
 admin.site.register(
     Photo,
