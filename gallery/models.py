@@ -17,7 +17,7 @@ class Photo(models.Model):
     caption = models.CharField(max_length=250, null=False, blank=False)
     category = models.CharField(max_length=100, choices=CATEGORIES, default='')
     description = models.TextField(null=False, blank=False)
-    filename = models.CharField(max_length=150, null=False, blank=False)
+    photo = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     public = models.BooleanField(default=False)
     date_added = models.DateTimeField(default=datetime.now, blank=False)
 
