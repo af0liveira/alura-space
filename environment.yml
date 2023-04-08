@@ -7,9 +7,22 @@ ca-certificates=2023.01.10=hecd8cb5_0
 certifi=2022.12.7=py310hecd8cb5_0
 click=8.0.4=py310hecd8cb5_0
 django=4.1=py310hecd8cb5_0
+freetype=2.12.1=hd8bbffd_0
+giflib=5.2.1=h6c40b1e_3
+jpeg=9e=h6c40b1e_1
+lcms2=2.12=hf1fd2bf_0
+lerc=3.0=he9d5cce_0
+libcxx=14.0.6=h9765a3e_0
+libdeflate=1.17=hb664fd8_0
 libffi=3.4.2=hecd8cb5_6
+libpng=1.6.39=h6c40b1e_0
+libtiff=4.5.0=hcec6c5f_2
+libwebp=1.2.4=hf6ce154_1
+libwebp-base=1.2.4=h6c40b1e_1
+lz4-c=1.9.4=hcec6c5f_0
 ncurses=6.4=hcec6c5f_0
 openssl=1.1.1t=hca72f7f_0
+pillow=9.4.0=py310hcec6c5f_0
 pip=23.0.1=py310hecd8cb5_0
 python=3.10.10=h218abb5_2
 python-dotenv=0.21.0=py310hecd8cb5_0
@@ -22,3 +35,4 @@ tzdata=2023c=h04d1e81_0
 wheel=0.38.4=py310hecd8cb5_0
 xz=5.2.10=h6c40b1e_1
 zlib=1.2.13=h4dc903c_0
+zstd=1.5.4=hc035e20_0
