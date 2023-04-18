@@ -11,4 +11,11 @@ def image(request, photo_id):
     return render(request, 'gallery/image.html', dict(photo=photo))
 
 def search(request):
-    return render(request, 'gallery/search.html')
+    photos = Photo.objects.order_by('-date_added').filter(public=True)
+
+    if 'search' in request.GET:
+        search_key = request.GET['search']
+        if search_key:
+            photos = photos.filter(title__contains=search_key)
+
+    return render(request, 'gallery/search.html', dict(cards=photos))
