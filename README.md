@@ -1,15 +1,19 @@
 # Alura Space
 
-This project is the implementaion of a simple photo gallery for spatial images.
+This project is the backend implementation of a website for displaying space
+photographs, _Alura Space_.
 
-The _home_ page displays thumbnails of the images, which can be clicked and
-opened on a separate page with further information about the image.
+This project was developed within the online formation [Django: crie aplicações
+em Python](https://cursos.alura.com.br/formacao-django) \[Django: develop
+applications in Python\] of the [Alura school](https://www.alura.com.br/).
 
-The project was implemented in Django as part of the course [_Django: templates
-e boas
-práticas_](https://cursos.alura.com.br/course/django-templates-boas-praticas)
-\[_Django: templates and good practices_\] from
-[Alura](https://www.alura.com.br/).
+The main page displays a thumbnail gallery of the photos in reverse
+chronological order or inclusion.
+The user can click the thumbnail to open the full-size image on a separate page
+with additional information about the photo.
+
+A search mechanism has also been implemented, by which the user can search for
+image titles matching the search terms.
 
 ## Running the application
 
@@ -21,7 +25,7 @@ To run the application:
     git clone https://github.com/af0liveira/alura-space.git
     ```
 
-2. Enter the cloned repository and create the virtual environment (the exemplo
+2. Enter the cloned repository and create the virtual environment (the example
    shows the use of _conda_, but you can use _virtualenv_ as well, as explained
    below)
 
@@ -90,4 +94,3 @@ pip list --format=freeze > requirements.txt
 ```
 
 ---
-
