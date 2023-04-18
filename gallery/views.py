@@ -18,4 +18,4 @@ def search(request):
         if search_key:
             photos = photos.filter(title__contains=search_key)
 
-    return render(request, 'gallery/search.html', dict(cards=photos))
+    return render(request, 'gallery/search.html', dict(cards=photos, search_key=search_key))
