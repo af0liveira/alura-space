@@ -9,7 +9,7 @@ class ListPhotos(admin.ModelAdmin):
     list_editable = ('public',)
     list_display_links = ('id', 'title')
     search_fields = ('title',)
-    list_filter = ('category',)
+    list_filter = ('category','user')
     list_per_page = 10
 
 admin.site.register(
