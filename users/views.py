@@ -63,6 +63,8 @@ def signup(request):
     return render(request, 'users/signup.html', dict(form=form))
 
 def logout(request):
-    auth.logout(request)
-    messages.success(request, "Logout efetuado com sucesso!")
+    if request.user.is_authenticated:
+        username = request.user.username
+        auth.logout(request)
+        messages.success(request, f"Logout de {username} efetuado com sucesso!")
     return redirect('login')
