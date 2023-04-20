@@ -69,3 +69,16 @@ class SignupForm(forms.Form):
             },
         ),
     )
+
+    def clean_login_name(self):
+        login_name = self.cleaned_data.get('login_name')
+
+        if login_name:
+            login_name = login_name.strip()
+            if ' ' in login_name:
+                raise forms.ValidationError("Nome de login não pode conter espaços!")
+            else:
+                return login_name
+
+            
+
