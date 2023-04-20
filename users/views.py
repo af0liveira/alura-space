@@ -57,7 +57,7 @@ def signup(request):
             )
 
             new_user.save()
-            messages.success(f"Usuário <b>{username}</b> cadastrado com sucesso!")
+            messages.success(request, f"Usuário <b>{username}</b> cadastrado com sucesso!")
             return redirect('login')
     
     return render(request, 'users/signup.html', dict(form=form))
