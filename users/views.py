@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.contrib import auth
+from django.contrib import auth, messages
 
 from users.forms import LoginForm, SignupForm
 
@@ -22,8 +22,10 @@ def login(request):
 
             if user is not None:
                 auth.login(request, user)
+                messages.success(request, f"Logado como <bold>{username}</bold>.")
                 return redirect('index')
             else:
+                messages.error(request, f"Falha ao efetuar login!")
                 return redirect('login')
 
     return render(request, 'users/login.html', dict(form=form))
@@ -37,6 +39,7 @@ def signup(request):
         if form.is_valid():
 
             if form['password'].value() != form['password_confirmation'].value():
+                messages.error(request, "Senhas não coincidem!")
                 return redirect('signup')
 
             username = form['login_name'].value()
@@ -44,6 +47,7 @@ def signup(request):
             email = form['email'].value()
 
             if User.objects.filter(username=username).exists():
+                messages.error(request, f"Usuário <b>{username}</b> já existe!")
                 return redirect('signup')
 
             new_user = User.objects.create_user(
@@ -53,6 +57,7 @@ def signup(request):
             )
 
             new_user.save()
+            messages.success(f"Usuário <b>{username}</b> cadastrado com sucesso!")
             return redirect('login')
     
     return render(request, 'users/signup.html', dict(form=form))
