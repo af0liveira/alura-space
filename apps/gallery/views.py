@@ -28,3 +28,6 @@ def search(request):
             photos = photos.filter(title__contains=search_key)
 
     return render(request, 'gallery/search.html', dict(cards=photos, search_key=search_key))
+
+def add_image(request):
+    return render(request, 'gallery/add_image.html')
