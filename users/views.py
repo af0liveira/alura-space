@@ -22,7 +22,7 @@ def login(request):
 
             if user is not None:
                 auth.login(request, user)
-                messages.success(request, f"Logado como <bold>{username}</bold>.")
+                messages.success(request, f"Logado como '{username}'.")
                 return redirect('index')
             else:
                 messages.error(request, f"Falha ao efetuar login!")
@@ -47,7 +47,7 @@ def signup(request):
             email = form['email'].value()
 
             if User.objects.filter(username=username).exists():
-                messages.error(request, f"Usuário <b>{username}</b> já existe!")
+                messages.error(request, f"Usuário '{username}' já existe!")
                 return redirect('signup')
 
             new_user = User.objects.create_user(
@@ -57,7 +57,7 @@ def signup(request):
             )
 
             new_user.save()
-            messages.success(request, f"Usuário <b>{username}</b> cadastrado com sucesso!")
+            messages.success(request, f"Usuário '{username}' cadastrado com sucesso!")
             return redirect('login')
     
     return render(request, 'users/signup.html', dict(form=form))
@@ -66,5 +66,5 @@ def logout(request):
     if request.user.is_authenticated:
         username = request.user.username
         auth.logout(request)
-        messages.success(request, f"Logout de {username} efetuado com sucesso!")
+        messages.success(request, f"Logout de '{username}' efetuado com sucesso!")
     return redirect('login')
