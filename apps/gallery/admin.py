@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from gallery.models import Photo
+from apps.gallery.models import Photo
 
 class ListPhotos(admin.ModelAdmin):
     """Customize the display of the Photo model in Django Admin."""

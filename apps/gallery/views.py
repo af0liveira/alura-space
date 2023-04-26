@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 
-from gallery.models import Photo
+from apps.gallery.models import Photo
 
 def index(request):
     photos = Photo.objects.order_by('-date_added').filter(public=True)
