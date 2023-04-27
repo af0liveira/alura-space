@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 
-from datetime import datetime
+# from datetime import datetime
 
 class Photo(models.Model):
     """Class for representing an photograph in the database."""
@@ -19,8 +20,8 @@ class Photo(models.Model):
     category = models.CharField(max_length=100, choices=CATEGORIES, default='')
     description = models.TextField(null=False, blank=False)
     photo = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
-    public = models.BooleanField(default=False)
-    date_added = models.DateTimeField(default=datetime.now, blank=False)
+    public = models.BooleanField(default=True)
+    date_added = models.DateTimeField(default=timezone.now, blank=False)
     user = models.ForeignKey(
         to=User,
         on_delete=models.SET_NULL,
