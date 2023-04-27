@@ -47,3 +47,22 @@ def add_image(request):
             return redirect('index')
 
     return render(request, 'gallery/add_image.html', dict(form=form))
+
+def edit_image(request, photo_id):
+    photo = Photo.objects.get(id=photo_id)
+    form = PhotoForm(instance=photo)
+
+    if request.method == 'POST':
+        form = PhotoForm(request.POST, request.FILES, instance=photo)
+
+        if form.is_valid():
+            title = form['title'].value()
+            form.save()
+            messages.success(request, f"Foto modificada: '{title}'.")
+            return redirect('index')
+
+    return render(request, 'gallery/edit_image.html', dict(form=form,
+                  photo_id=photo_id))
+
+def delete_image(request):
+    pass
