@@ -70,3 +70,13 @@ def delete_image(request, photo_id):
     photo.delete()
     messages.success(request, f"Foto removida: '{title}'.")
     return redirect('index')
+
+def filter(request, category):
+    if not request.user.is_authenticated:
+        messages.error(request, "Faça seu login para prosseguir!")
+        return redirect('login')
+
+    photos = Photo.objects.order_by('-date_added')\
+                          .filter(public=True, category=category)
+
+    return render(request, 'gallery/index.html', dict(cards=photos))
