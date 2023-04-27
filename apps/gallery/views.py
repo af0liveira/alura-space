@@ -27,8 +27,9 @@ def search(request):
         search_key = request.GET['search']
         if search_key:
             photos = photos.filter(title__contains=search_key)
+            messages.info(request, f"Termo de busca: '{search_key}'")
 
-    return render(request, 'gallery/search.html', dict(cards=photos, search_key=search_key))
+    return render(request, 'gallery/index.html', dict(cards=photos, search_key=search_key))
 
 def add_image(request):
     if not request.user.is_authenticated:
