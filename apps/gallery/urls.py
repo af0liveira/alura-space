@@ -8,5 +8,5 @@ urlpatterns = [
     path('search', search, name='search'),
     path('add-image', add_image, name='add_image'),
     path('edit-image/<int:photo_id>', edit_image, name='edit_image'),
-    path('delete-image', delete_image, name='delete_image'),
+    path('delete-image/<int:photo_id>', delete_image, name='delete_image'),
 ]
