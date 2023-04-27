@@ -14,6 +14,7 @@ class PhotoForm(forms.ModelForm):
             'caption': 'Legenda',
             'category': 'Categoria',
             'description': 'Descrição',
+            'photo': 'Fotografia',
             'date_added': 'Data de Cadastramento',
             'user': 'Usuário',
         }
