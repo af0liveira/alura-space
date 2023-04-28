@@ -6,7 +6,7 @@
     <section class="imagem">
         <div class="imagem__conteudo">
             {% if photo.photo == '' or photo.photo == null %}
-            <img class="card__imagem" src="{% static '/assets/imagens/galeria/image-not-found.png' %}" alt="foto">
+            <img class="card__imagem" src="{% static 'assets/imagens/galeria/image-not-found.png' %}" alt="foto">
             {% else %}
             <img class="imagem__imagem" src="{{ photo.photo.url }}">
             {% endif %}
