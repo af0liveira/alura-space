@@ -1,5 +1,4 @@
-Alura Space Photo Gallery
-=========================
+# Alura Space Photo Gallery
 
 Welcome to Alura Space, a web application for space photos!
 
@@ -14,10 +13,12 @@ Additionaly, the Amazon S3 service is used for storing the images files in the c
 > The application's database will remain local and is not part of this repository.
 
 This project was developed as part of the [Django formation](https://cursos.alura.com.br/formacao-django) at the [Alura](https://www.alura.com.br/) tech school.
-The original frontend project and assets were obtained from [here](https://github.com/alura-cursos/alura_space/tree/projeto_front).
+The original frontend project (based on [this
+prototype](https://www.figma.com/file/Y1W8HJHKqlUdDFeWi8e4cz/Alura-Space-%7C-React%3A-arquivos-estáticos?node-id=89%3A4))
+and assets were obtained from
+[here](https://github.com/alura-cursos/alura_space/tree/projeto_front).
 
-Getting Started
----------------
+## Getting Started
 
 To run the Alura Space application, you'll need to have Python, Django, and all required dependencies installed.
 You can do this by setting up a virtual environment with the required dependencies using either `conda` or `virtualenv`.
@@ -94,16 +95,42 @@ Now you should be able to access the Alura Space application by visiting `http:/
 
 > ⚠️ At this point the application will display an empty photo gallery, since no images have been added yet.
 
-Managing the application
-------------------------
+## Using the Application as a Regular User
 
-The application can be managed via `Django Admin` by visiting the URL `http://localhost:8000/admin` on your web browser.
-However, you'll need to create a superuser.
+### Signing Up and Logging In
+
+Once the application is up and running, you can sign up via the menu "Cadastre-se".
+You'll be asked to create a user name with an email and password.
+
+Once you sign up, you'll be redirected to the login page, where you need to log in to use the application.
+
+### Adding, Editing, and Deleting Images
+
+If you're logged in, you can add a new image to the gallery via the menu "Nova Imagem".
+It'll open a new form where you can enter a title, caption, and detailed information that will be shown in the image view page.
+
+Once the image is registered in the application, it will appear in the gallery on the main page.
+You'll get an expanded view of the image by cliking its card in the gallery.
+
+In the expanded view, you'll see the detailed information in addition with two buttons: "Editar" (edit) and "Deletar" (delete).
+The button "Editar" allow you to ammend the information of the image, as well as replace the image file.
+The button "Deletar" will remove the image from the database.
+
+> ⚠️ Be aware that **the button "Deletar" will remove the image without asking for confirmation.**
+
+## Administrative Tasks
+
+The _Django Admin_ tool will give you access to the admistrative interface of the application, including the database of users and photos, via the URL `http://localhost:8000/admin`.
+However, you'll have to log in with superuser credentials.
 
 To create a superuser:
 
+> ℹ️ It is **not** necessary to stop the server to perform this procedure.
+
 1. Navigate to the root directory of the project.
+
 2. Make sure that the virtual development environment has been activated (see above).
+
 3. Run the command
 
     ```sh
@@ -111,10 +138,10 @@ To create a superuser:
     ```
 
 4. Follow the instructions to enter the user name, email, and password.
-5. Start the server with the command
 
-    ```sh
-    python manage.py runserver
-    ```
+5. Access _Django Admin_ on your browser via the URL `http://localhost:8000/admin` and log in as superuser.
 
-6. Access Django Admin on your browser via the URL `http://localhost:8000/admin`.
+Once you can log into the _Django Admin_ page, you'll be able to control the
+database of users and images, including creation, modification, and deletion of
+itens.
+
