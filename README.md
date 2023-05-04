@@ -81,4 +81,27 @@ You'll also need an Amazon S3 bucket for data storage on the cloud.
 
 Now you should be able to access the Alura Space application by visiting `http://localhost:8000` in your web browser.
 
+Managing the application
+------------------------
 
+The application can be managed via `Django Admin` by visiting the URL `http://localhost:8000/admin` on your web browser.
+However, you'll need to create a superuser.
+
+To create a superuser:
+
+1. Navigate to the root directory of the project.
+2. Make sure that the virtual development environment has been activated (see above).
+3. Run the command
+
+    ```sh
+    python manage.py createsuperuser
+    ```
+
+4. Follow the instructions to enter the user name, email, and password.
+5. Start the server with the command
+
+    ```sh
+    python manage.py runserver
+    ```
+
+6. Access Django Admin on your browser via the URL `http://localhost:8000/admin`.
