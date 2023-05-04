@@ -1,9 +1,17 @@
 Alura Space Photo Gallery
 =========================
 
-Welcome to Alura Space, a photo gallery for space images!
-This project implements the backend the Alura Space app using Python 3.10 and Django 4.1.
-The Amazon S3 service is used to store the images and user data related to the application.
+Welcome to Alura Space, a web application for space photos!
+
+The application is a platform for visualizing and sharing astronomy images.
+To use the application, users are required to sign up.
+Once logged in, the user will have access to the full photo gallery and will be able to upload their own images.
+
+This project implements the backend of the application using Python 3.10 with the Django 4.1 framework.
+Additionaly, the Amazon S3 service is used for storing the images files in the cloud.
+
+> ⚠️ You should note that **only the image files are stored in the cloud**.
+> The application's database will remain local and is not part of this repository.
 
 This project was developed as part of the [Django formation](https://cursos.alura.com.br/formacao-django) at the [Alura](https://www.alura.com.br/) tech school.
 The original frontend project and assets were obtained from [here](https://github.com/alura-cursos/alura_space/tree/projeto_front).
@@ -14,7 +22,9 @@ Getting Started
 To run the Alura Space application, you'll need to have Python, Django, and all required dependencies installed.
 You can do this by setting up a virtual environment with the required dependencies using either `conda` or `virtualenv`.
 
-You'll also need an Amazon S3 bucket for data storage on the cloud.
+You'll also need to set up a bucket on Amazon S3 for storing the image files.
+
+You can follow the steps below to have the application up and running.
 
 1. Clone the repository to your local machine.
 
@@ -32,7 +42,7 @@ You'll also need an Amazon S3 bucket for data storage on the cloud.
 
     If you're using `conda`:[^1]
 
-    [^1]: If necessary, enable the `conda-forge` channel using the command
+    [^1]: If necessary, append `conda-forge` to your channels list using the command
 
         ```sh
         conda config --append channels conda-forge
@@ -43,7 +53,7 @@ You'll also need an Amazon S3 bucket for data storage on the cloud.
     conda activate 
     ```
 
-    If you're using `virtualenv`:
+    If you're using `virtualenv` + `pip`:
 
     ```sh
     virtualenv venv
@@ -51,7 +61,8 @@ You'll also need an Amazon S3 bucket for data storage on the cloud.
     pip install -r requirements.txt
     ```
 
-4. Set up the application environment variables. You can do this by creating a `.env` file in the root directory of the project with the following content:
+4. Set up the environment variables of the application.
+   This should be done by creating a `.env` file in the root directory of the project with the following content:
 
     ```sh
     # Django key
@@ -73,13 +84,15 @@ You'll also need an Amazon S3 bucket for data storage on the cloud.
     python manage.py migrate
     ```
 
-6. Start the development server by running the command
+6. Start the application server by running the command
 
     ```sh
     python manage.py runserver
     ```
 
 Now you should be able to access the Alura Space application by visiting `http://localhost:8000` in your web browser.
+
+> ⚠️ At this point the application will display an empty photo gallery, since no images have been added yet.
 
 Managing the application
 ------------------------
