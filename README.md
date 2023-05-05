@@ -118,6 +118,8 @@ The button "Deletar" will remove the image from the database.
 
 > ⚠️ Be aware that **the button "Deletar" will remove the image without asking for confirmation.**
 
+https://user-images.githubusercontent.com/22354331/236355643-e5cc5f16-c1c2-4843-9db5-2f3184e231fc.mp4
+
 ## Administrative Tasks
 
 The _Django Admin_ tool will give you access to the admistrative interface of the application, including the database of users and photos, via the URL `http://localhost:8000/admin`.
